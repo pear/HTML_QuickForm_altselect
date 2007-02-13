@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
+<package version="1.0" packagerversion="1.4.5">
+ <name>HTML_QuickForm_altselect</name>
+ <summary>A HTML_QuickForm element with options represented as either radio buttons or checkboxes and an optional 'other' text field.</summary>
+ <description>A class that extends the HTML_QuickForm_select class to make a quickform element with options represented as either radio buttons or checkboxes depending on whether or not the multiple attribute was set.  An 'other' textfield may also be added for discretionary alternatives.</description>
+ <maintainers>
+  <maintainer>
+   <user>dsanders</user>
+   <name>David Sanders</name>
+   <email>shang.xiao.sanders@gmail.com</email>
+   <role>lead</role>
+  </maintainer>
+  </maintainers>
+ <release>
+  <version>1.0.2</version>
+  <date>2007-02-13</date>
+  <license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
+  <state>stable</state>
+  <notes>Fixed exportValue() so that it behaves more like HTML_QuickForm_select when dealing
+with nothing submitted, array submitted when singular and vice versa.</notes>
+  <deps>
+    <dep type="php" rel="ge" version="4.0.1" optional="no" />
+    <dep type="php" rel="ge" version="4.2" />
+    <dep type="pkg" rel="ge" version="1.2.1">HTML_Common</dep>
+    <dep type="pkg" rel="ge" version="3.2.5">HTML_QuickForm</dep>
+  </deps>
+  <provides type="class" name="HTML_QuickForm_altselect" />
+  <filelist>
+   <file role="php" baseinstalldir="HTML/QuickForm" md5sum="10df750da91f8bbda00b48a66545f309" name="altselect.php">
+    <replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <dir role="test" name="tests">
+    <file md5sum="58f01cfbb59351cab30973d507c280e2" name="01.phpt" />
+    <file md5sum="a8ace73a364c22638a1fa40d3a4ec1ef" name="02.phpt" />
+    <file md5sum="5dbc7e962ad435a0bb0f6a7f0c87b068" name="03.phpt" />
+    <file md5sum="81f7a4525d11083f663c9fd589c802fb" name="04.phpt" />
+    <file md5sum="8b495b06357884a9d9e1e761d3937dd1" name="05.phpt" />
+    <file md5sum="8d451cc03a97b8417e87ea8aa929617c" name="06.phpt" />
+    <file md5sum="66c38f9d080f8fd0c8a4ddef20845ada" name="07.phpt" />
+    <file md5sum="a7af789f931ae41bb89a665552b384d7" name="08.phpt" />
+    <file md5sum="391bcda0c353f53eb46ea270cb49783f" name="09.phpt" />
+    <file md5sum="f7da6a630d857c0b0e2b628a171b90b8" name="10.phpt" />
+    <file md5sum="4e85aa053feb270375ba1d96591941ea" name="11.phpt" />
+    <file md5sum="f5eb100fb019051acb45ed67533751e6" name="12.phpt" />
+    <file md5sum="87c0a35a02053d19caa565972dde0260" name="13.phpt" />
+    <file md5sum="382a3999606c1bfe9ca628040d19cd76" name="14.phpt" />
+    <file md5sum="fc91c82e27c890f4dbaf442e026b7003" name="15.phpt" />
+   </dir>
+   <dir role="doc" name="docs">
+    <dir name="examples">
+     <file md5sum="709af6087ef16ab4b024d33fbd9ede19" name="example.php" />
+    </dir>
+   </dir>
+  </filelist>
+ </release>
+ <changelog>
+  <release>
+   <version>1.0.1</version>
+   <date>2007-02-02</date>
+   <license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
+   <state>stable</state>
+   <notes>- Change of license.
+ - Added parent call in setSelected().
+ - Removed a few redundant checks.
+ - HTML comment now displaying correctly.
+ - Using tabs to align html, if they get set.
+ - Fixed a php notice if the element was set for multiple and an array wasn't posted.</notes>
+  </release>
+  <release>
+   <version>1.0.0</version>
+   <date>2007-01-27</date>
+   <license>PHP License</license>
+   <state>stable</state>
+   <notes>Fixed up coding standards according to PEAR</notes>
+  </release>
+  <release>
+   <version>0.3.7</version>
+   <date>2006-11-14</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>Fixed error message when export and nothing submitted for multiple select</notes>
+  </release>
+  <release>
+   <version>0.3.6</version>
+   <date>2006-10-11</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Fixed bug with freezing not being propagated correctly to individual
+ elements when treating like a group.</notes>
+  </release>
+  <release>
+   <version>0.3.5</version>
+   <date>2006-10-10</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Use the QF function _findValue() to retrieve the element's value out of
+ submitValues instead of direct access, in case the element name is using
+ [] to specify that it is part of an array.</notes>
+  </release>
+  <release>
+   <version>0.3.4</version>
+   <date>2006-07-05</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Fixed exportValue so that it correctly exports the other value when
+assoc is true.  Also uses _prepareValue to return a correct assoc array when
+returning a value.
+- Fixed setSelected so that it sets the other value always as the include_other
+option may not have been set by the time this function is called.</notes>
+  </release>
+  <release>
+   <version>0.3.3</version>
+   <date>2006-07-04</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Remove the _qf_other option from the option list after temporarily
+adding in exportValue.
+- Return from setSelected if a null value is passed.</notes>
+  </release>
+  <release>
+   <version>0.3.2</version>
+   <date>2006-05-29</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Export the array correctly now with the name of the element as the key.
+- Allowed multiple other options to be set in multiple mode.</notes>
+  </release>
+  <release>
+   <version>0.3.1</version>
+   <date>2006-05-26</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Renamed _getElements() to getElements() and added getElementName() to
+ coincide with HTML_QuickForm_group for when registered as a group.
+ - Only create the disable function when including the other textfield.</notes>
+  </release>
+  <release>
+   <version>0.3.0</version>
+   <date>2006-05-24</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Added ability to specifiy html attributes for each of the individual form elements.
+  - Improved phpdoc commenting.</notes>
+  </release>
+  <release>
+   <version>0.2.1</version>
+   <date>2006-05-11</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>Added label tags for the element labels.  Didn't include the labels as the text property of the radio or checkbox elements, as these may be required to render without the labels when rendering as a group in a template.</notes>
+  </release>
+  <release>
+   <version>0.2.0</version>
+   <date>2006-05-09</date>
+   <license>BSD License</license>
+   <state>beta</state>
+   <notes>- Changed frozen html to use the individual element frozen html functions.</notes>
+  </release>
+  <release>
+   <version>0.1.1</version>
+   <date>2006-04-21</date>
+   <license>BSD License</license>
+   <state>alpha</state>
+  <notes>- Added PHP_EOL constant.
+- Added HTML comment.
+- Fixed a few errors with rendering as a group.</notes>
+  </release>
+  <release>
+   <version>0.1</version>
+   <date>2006-03-03</date>
+   <license>BSD License</license>
+   <state>alpha</state>
+   <notes>Initial checkin</notes>
+  </release>
+ </changelog>
+</package>
