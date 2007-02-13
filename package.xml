@@ -3,10 +3,10 @@
 <package version="1.0" packagerversion="1.4.5">
  <name>HTML_QuickForm_altselect</name>
  <summary>An alternative to HTML_QuickForm_select using radio buttons and checkboxes</summary>
- <description>A QuickForm plugin that extends the select element and turns its options into checkboxes or radio buttons depending on whether the multiple html attribute was set or not. For extra options not listed, you can also render an 'Other' textfield.</description>
+ <description>A QuickForm plugin that extends the select element and turns its options into checkboxes or radio buttons depending on whether the multiple html attribute was set or not. For extra options not listed, you can also render an &apos;Other&apos; textfield.</description>
  <maintainers>
   <maintainer>
-   <user>dsanders</user>
+   <user>shangxiao</user>
    <name>David Sanders</name>
    <email>shang.xiao.sanders@gmail.com</email>
    <role>lead</role>
@@ -74,7 +74,7 @@
    <date>2006-10-10</date>
    <license>BSD License</license>
    <state>beta</state>
-   <notes>- Use the QF function _findValue() to retrieve the element's value out of
+   <notes>- Use the QF function _findValue() to retrieve the element&apos;s value out of
  submitValues instead of direct access, in case the element name is using
  [] to specify that it is part of an array.</notes>
   </release>
@@ -128,7 +128,7 @@ adding in exportValue.
    <date>2006-05-11</date>
    <license>BSD License</license>
    <state>beta</state>
-   <notes>Added label tags for the element labels.  Didn't include the labels as the text property of the radio or checkbox elements, as these may be required to render without the labels when rendering as a group in a template.</notes>
+   <notes>Added label tags for the element labels.  Didn&apos;t include the labels as the text property of the radio or checkbox elements, as these may be required to render without the labels when rendering as a group in a template.</notes>
   </release>
   <release>
    <version>0.2.0</version>
