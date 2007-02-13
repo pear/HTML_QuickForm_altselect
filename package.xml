@@ -17,15 +17,7 @@
   <date>2007-02-13</date>
   <license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
   <state>beta</state>
-  <notes>- Fixed exportValue() so that it behaves more like HTML_QuickForm_select when dealing
-with nothing submitted, array submitted when singular and vice versa.
-- Change of license.
-- Added parent call in setSelected().
-- Removed a few redundant checks.
-- HTML comment now displaying correctly.
-- Using tabs to align html, if they get set.
-- Fixed a php notice if the element was set for multiple and an array wasn't posted.
-- Fixed up coding standards according to PEAR</notes>
+  <notes>This is the initial release of the HTML_QuickForm_altselect package.</notes>
   <deps>
     <dep type="php" rel="ge" version="4.0.1" optional="no" />
     <dep type="php" rel="ge" version="4.2" />
