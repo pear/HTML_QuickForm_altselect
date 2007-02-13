@@ -13,12 +13,19 @@
   </maintainer>
   </maintainers>
  <release>
-  <version>1.0.2</version>
+  <version>1.0.0RC1</version>
   <date>2007-02-13</date>
   <license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-  <state>stable</state>
-  <notes>Fixed exportValue() so that it behaves more like HTML_QuickForm_select when dealing
-with nothing submitted, array submitted when singular and vice versa.</notes>
+  <state>beta</state>
+  <notes>- Fixed exportValue() so that it behaves more like HTML_QuickForm_select when dealing
+with nothing submitted, array submitted when singular and vice versa.
+- Change of license.
+- Added parent call in setSelected().
+- Removed a few redundant checks.
+- HTML comment now displaying correctly.
+- Using tabs to align html, if they get set.
+- Fixed a php notice if the element was set for multiple and an array wasn't posted.
+- Fixed up coding standards according to PEAR</notes>
   <deps>
     <dep type="php" rel="ge" version="4.0.1" optional="no" />
     <dep type="php" rel="ge" version="4.2" />
@@ -55,25 +62,6 @@ with nothing submitted, array submitted when singular and vice versa.</notes>
   </filelist>
  </release>
  <changelog>
-  <release>
-   <version>1.0.1</version>
-   <date>2007-02-02</date>
-   <license uri="http://www.gnu.org/licenses/lgpl.txt">LGPL</license>
-   <state>stable</state>
-   <notes>- Change of license.
- - Added parent call in setSelected().
- - Removed a few redundant checks.
- - HTML comment now displaying correctly.
- - Using tabs to align html, if they get set.
- - Fixed a php notice if the element was set for multiple and an array wasn't posted.</notes>
-  </release>
-  <release>
-   <version>1.0.0</version>
-   <date>2007-01-27</date>
-   <license>PHP License</license>
-   <state>stable</state>
-   <notes>Fixed up coding standards according to PEAR</notes>
-  </release>
   <release>
    <version>0.3.7</version>
    <date>2006-11-14</date>
