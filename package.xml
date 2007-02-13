@@ -2,8 +2,8 @@
 <!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
 <package version="1.0" packagerversion="1.4.5">
  <name>HTML_QuickForm_altselect</name>
- <summary>A HTML_QuickForm element with options represented as either radio buttons or checkboxes and an optional 'other' text field.</summary>
- <description>A class that extends the HTML_QuickForm_select class to make a quickform element with options represented as either radio buttons or checkboxes depending on whether or not the multiple attribute was set.  An 'other' textfield may also be added for discretionary alternatives.</description>
+ <summary>An alternative to HTML_QuickForm_select using radio buttons and checkboxes</summary>
+ <description>A QuickForm plugin that extends the select element and turns its options into checkboxes or radio buttons depending on whether the multiple html attribute was set or not. For extra options not listed, you can also render an 'Other' textfield.</description>
  <maintainers>
   <maintainer>
    <user>dsanders</user>
