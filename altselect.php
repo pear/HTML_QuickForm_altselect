@@ -148,8 +148,9 @@ class HTML_QuickForm_altselect extends HTML_QuickForm_select
      *                                 a typical HTML attribute string or an
      *                                 associative array.
      *                                 NOTE: use "_qf_other" for the other radio
-     *                                 button, and "_qf_other_text" for the 
-     *                                 text field.
+     *                                 button, "_qf_other_text" for the 
+     *                                 text field and "_qf_all" to apply the
+     *                                 attributes to all the option elements.
      * @return void
      */
     function HTML_QuickForm_altselect($elementName = null,
