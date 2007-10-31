@@ -267,6 +267,10 @@ EOT;
                 }
             }
 
+            if (isset($this->_individualAttributes['_qf_all'])) {
+                $element->updateAttributes($this->_individualAttributes['_qf_all']);
+            }
+
             if (isset($this->_individualAttributes[$option['attr']['value']])) {
                 $element->updateAttributes($this->_individualAttributes[$option['attr']['value']]);
             }
