@@ -264,7 +264,7 @@ EOT;
                                                           $option['attr']['value']);
                 if ($this->includeOther) {
                     $element->updateAttributes(array(
-                        'onClick' => "_qf_altselect_disableElement(this.form.elements[this.name + '_qf_other'],true);"));
+                        'onclick' => "_qf_altselect_disableElement(this.form.elements[this.name + '_qf_other'],true);"));
                 }
             }
 
@@ -313,7 +313,7 @@ EOT;
                 }
 
                 $element->updateAttributes(array(
-                    'onClick'=>"_qf_altselect_disableElement(this.form.elements[this.name+'_qf_other'],false);this.form.elements[this.name+'_qf_other'].focus();this.form.elements[this.name+'_qf_other'].select();"));
+                    'onclick'=>"_qf_altselect_disableElement(this.form.elements[this.name+'_qf_other'],false);this.form.elements[this.name+'_qf_other'].focus();this.form.elements[this.name+'_qf_other'].select();"));
 
                 if (is_array($this->_values) &&
                     in_array('_qf_other', $this->_values)) {
