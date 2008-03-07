@@ -18,7 +18,7 @@
  * @author      David Sanders (shang.xiao.sanders@gmail.com)
  * @license     http://www.gnu.org/copyleft/lesser.html  LGPL License 2.1
  * @version     Release: @package_version@
- * @link        http://pyrus.sourceforge.net/HTML_QuickForm_altselect.html
+ * @link        http://pear.php.net/package/HTML_QuickForm_altselect
  * @see         HTML_QuickForm_select
  */
 
@@ -66,7 +66,7 @@ if (!defined('PHP_EOL')) {
  * @author      David Sanders (shang.xiao.sanders@gmail.com)
  * @license     http://www.gnu.org/copyleft/lesser.html  LGPL License 2.1
  * @version     Release: @package_version@
- * @link        http://pyrus.sourceforge.net/HTML_QuickForm_altselect.html
+ * @link        http://pear.php.net/package/HTML_QuickForm_altselect
  * @see         HTML_QuickForm_select
  */
 class HTML_QuickForm_altselect extends HTML_QuickForm_select
