@@ -1,5 +1,5 @@
 --TEST--
-1.phpt: Test singular mode, applying html attributes to all options
+17.phpt: Test singular mode, applying html attributes to all options
 --FILE--
 <?php
 
