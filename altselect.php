@@ -82,6 +82,15 @@ class HTML_QuickForm_altselect extends HTML_QuickForm_select
     var $includeOther = false;
 
     /**
+     * Other text type: 'text' or 'textarea'
+     *
+     * @var     string
+     * @access  public
+     * @see     setIncludeOther(), includeOther
+     */
+    var $includeOtherType = 'text';
+
+    /**
      * Label for the Other option.
      *
      * @var     string
@@ -347,7 +356,7 @@ EOT;
             //
 
             $other_id = 'qf_' . uniqid('');
-            $element =& HTML_QuickForm::createElement('text',
+            $element =& HTML_QuickForm::createElement($this->includeOtherType,
                                                       $textName,
                                                       null,
                                                       array('id'=>$other_id));
@@ -393,21 +402,24 @@ EOT;
                 }
                 $elements[$textName] =& $element;
             } else {
-                $htmlArray[] = $tabs .
-                               '<label for="' . $element->getAttribute('id') . '">' .
-                               $other_msg . 
-                               '</label> ' .
-                               $element->$html_func_to_use();
+                $temp_html = $tabs . '<label ';
+                if ($this->includeOtherType === 'textarea') {
+                    $temp_html .= 'style="vertical-align: top;" ';
+                }
+                $temp_html .= 'for="' . $element->getAttribute('id') . '">' .
+                              $other_msg .
+                              '</label> ' .
+                              $element->$html_func_to_use();
+                $htmlArray[] = $temp_html;
             }
         }
 
         if ($formatArray) {
             return $elements;
         } else {
-            $strHtml = $preHtml . PHP_EOL .
-                       implode($this->delimiter . PHP_EOL, $htmlArray) . PHP_EOL .
-                       $postHtml;
-            return $strHtml;
+            return $preHtml . PHP_EOL .
+                   implode($this->delimiter . PHP_EOL, $htmlArray) . PHP_EOL .
+                   $postHtml;
         }
     }
 
@@ -548,15 +560,23 @@ EOT;
     // {{{ setIncludeOther
 
     /**
-     * Set the select to include the 'other' textfield.
+     * Set the select to include the 'other' textfield/textarea.
      * 
-     * @param  bool    $include whether to include the other text field
+     * @param  bool/string $include If bool: whether to include the other text field,
+     *                              else if string: either 'text' or 'textarea'
      * @access public
      * @return void
      */
     function setIncludeOther($include = true)
     {
-        $this->includeOther = (bool) $include;
+        if (is_string($include) &&
+           ($include === 'text' || $include === 'textarea')) {
+            $this->includeOther = true;
+            $this->includeOtherType = $include;
+        } else {
+            $this->includeOther = (bool) $include;
+            $this->includeOtherType = 'text';
+        }
     }
 
     // }}}
