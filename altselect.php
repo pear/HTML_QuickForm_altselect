@@ -569,8 +569,7 @@ EOT;
      */
     function setIncludeOther($include = true)
     {
-        if (is_string($include) &&
-           ($include === 'text' || $include === 'textarea')) {
+        if ($include === 'text' || $include === 'textarea') {
             $this->includeOther = true;
             $this->includeOtherType = $include;
         } else {
