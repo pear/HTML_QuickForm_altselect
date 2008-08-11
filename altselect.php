@@ -436,7 +436,12 @@ EOT;
                     if ($id !== null) {
                         $tempHtml .= 'id="' . $key . '_' . $id . '" ';
                     }
-                    $tempHtml .= 'class="' . $key . '">' . $piece . '</li>' . PHP_EOL;
+                    if ($key === '_qf_other' || $key === '_qf_other_text') {
+                        $tempHtml .= 'class="' . $key . '">';
+                    } else {
+                        $tempHtml .= 'class="_qf_option">';
+                    }
+                    $tempHtml .= $piece . '</li>' . PHP_EOL;
                 }
                 $tempHtml .= '</' . $this->list_type . '>' . PHP_EOL .
                              $postHtml;
