@@ -124,6 +124,16 @@ class HTML_QuickForm_altselect extends HTML_QuickForm_select
     var $delimiter = '<br />';
 
     /**
+     * Rather than render with a delimiter you may choose to render as a HTML
+     * list.
+     *
+     * @var     string
+     * @access  public
+     * @see     delimiter
+     */
+    var $list_type;
+
+    /**
      * Other value storage.
      *
      * @var     string
@@ -297,11 +307,11 @@ EOT;
             } else {
                 // write our own label instead of adding text to the radio/cbox
                 // as we may want to render without any text when doing from a group
-                $htmlArray[] = $tabs .
-                               $element->$html_func_to_use() .
-                               '<label for="' . $element->getAttribute('id') . '">' .
-                               $option['text'] .
-                               '</label>';
+                $htmlArray['_qf_' . $option['attr']['value']] = $tabs .
+                                                                $element->$html_func_to_use() .
+                                                                '<label for="' . $element->getAttribute('id') . '">' .
+                                                                $option['text'] .
+                                                                '</label>';
             }
         }
 
@@ -337,11 +347,11 @@ EOT;
                     }
                     $elements['_qf_other'] =& $element;
                 } else {
-                    $htmlArray[] = $tabs .
-                                   $element->$html_func_to_use() . 
-                                   '<label for="' . $element->getAttribute('id') . '">' .
-                                   $this->otherLabel .
-                                   '</label>';
+                    $htmlArray['_qf_other'] = $tabs .
+                                              $element->$html_func_to_use() . 
+                                              '<label for="' . $element->getAttribute('id') . '">' .
+                                              $this->otherLabel .
+                                              '</label>';
                     $preHtml .= $javascript;
                 }
 
@@ -402,24 +412,40 @@ EOT;
                 }
                 $elements[$textName] =& $element;
             } else {
-                $temp_html = $tabs . '<label ';
+                $tempHtml = $tabs . '<label ';
                 if ($this->includeOtherType === 'textarea') {
-                    $temp_html .= 'style="vertical-align: top;" ';
+                    $tempHtml .= 'style="vertical-align: top;" ';
                 }
-                $temp_html .= 'for="' . $element->getAttribute('id') . '">' .
+                $tempHtml .= 'for="' . $element->getAttribute('id') . '">' .
                               $other_msg .
                               '</label> ' .
                               $element->$html_func_to_use();
-                $htmlArray[] = $temp_html;
+                $htmlArray['_qf_other_text'] = $tempHtml;
             }
         }
 
         if ($formatArray) {
             return $elements;
         } else {
-            return $preHtml . PHP_EOL .
-                   implode($this->delimiter . PHP_EOL, $htmlArray) . PHP_EOL .
-                   $postHtml;
+            if ($this->list_type === 'ul' || $this->list_type === 'ol') {
+                $tempHtml = $preHtml . PHP_EOL .
+                            '<' . $this->list_type . '>' . PHP_EOL;
+                foreach ($htmlArray as $key => $piece) {
+                    $tempHtml .= '<li ';
+                    $id = $this->getAttribute('id');
+                    if ($id !== null) {
+                        $tempHtml .= 'id="' . $key . '_' . $id . '" ';
+                    }
+                    $tempHtml .= 'class="' . $key . '">' . $piece . '</li>' . PHP_EOL;
+                }
+                $tempHtml .= '</' . $this->list_type . '>' . PHP_EOL .
+                             $postHtml;
+                return $tempHtml;
+            } else {
+                return $preHtml . PHP_EOL .
+                       implode($this->delimiter . PHP_EOL, $htmlArray) . PHP_EOL .
+                       $postHtml;
+            }
         }
     }
 
@@ -595,6 +621,22 @@ EOT;
         } else {
             $this->delimiter = $delimiter;
         }
+    }
+
+    // }}}
+    // {{{ setList
+
+    /**
+     * Set the options to render as an ordered/unordered list
+     *
+     * @param string $list_type The list type
+     * @access public
+     * @return void
+     */
+
+    function setListType($list_type)
+    {
+        $this->list_type = $list_type;
     }
 
     // }}}
