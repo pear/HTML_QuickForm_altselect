@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.6.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
  <name>HTML_QuickForm_altselect</name>
  <channel>pear.php.net</channel>
  <summary>An alternative to HTML_QuickForm_select using radio buttons and checkboxes</summary>
@@ -10,18 +10,20 @@
   <email>shang.xiao.sanders@gmail.com</email>
   <active>yes</active>
  </lead>
- <date>2007-11-01</date>
- <time>02:41:27</time>
+ <date>2008-08-18</date>
+ <time>15:32:59</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.1.0</release>
+  <api>1.1.0</api>
  </version>
  <stability>
   <release>stable</release>
   <api>stable</api>
  </stability>
  <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
- <notes> - Added the ability to apply HTML attributes to all the option elements by using &apos;_qf_all&apos; in the associative array for the attributes parameter.</notes>
+ <notes>- Fixed Bug #12940: XHTML compliance
+- Implemented Request #14475: SelectOther as textarea instead of input text
+- Implemented Request #12941: Allow generation of list markup</notes>
  <contents>
   <dir baseinstalldir="HTML/QuickForm" name="/">
    <file baseinstalldir="HTML/QuickForm" md5sum="709af6087ef16ab4b024d33fbd9ede19" name="docs/examples/example.php" role="doc" />
@@ -40,9 +42,14 @@
    <file baseinstalldir="HTML/QuickForm" md5sum="87c0a35a02053d19caa565972dde0260" name="tests/13.phpt" role="test" />
    <file baseinstalldir="HTML/QuickForm" md5sum="382a3999606c1bfe9ca628040d19cd76" name="tests/14.phpt" role="test" />
    <file baseinstalldir="HTML/QuickForm" md5sum="fc91c82e27c890f4dbaf442e026b7003" name="tests/15.phpt" role="test" />
-   <file baseinstalldir="HTML/QuickForm" md5sum="69c300aa46b9db014125aa2edcf0fc7c" name="tests/16.phpt" role="test" />
-   <file baseinstalldir="HTML/QuickForm" md5sum="5eb60815532d112e042b95546c82bf3f" name="tests/17.phpt" role="test" />
-   <file baseinstalldir="HTML/QuickForm" md5sum="54b764ec580a141ea6199e6bd099f461" name="altselect.php" role="php">
+   <file baseinstalldir="HTML/QuickForm" md5sum="0ce4618dcd9bda8a68bc3df4f298fe18" name="tests/16.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="a3c85c12c8c2f3b497f73ed36b82e9a0" name="tests/17.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="d049bca3ec62eb0ce809334c257a95b4" name="tests/18.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="f66cc1cb849a2fc0d4e94b9063302529" name="tests/19.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="90c2bb37c837980b5dc58049b048d544" name="tests/20.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="8257cc154c78b5129d257d34232e0762" name="tests/21.phpt" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="cc4a642a426e7df725731dce1dcc1c39" name="tests/escape_output.php" role="test" />
+   <file baseinstalldir="HTML/QuickForm" md5sum="2f87a44c8ac7418e19c46638b6b698e2" name="altselect.php" role="php">
     <tasks:replace from="@package_version@" to="version" type="package-info" />
    </file>
   </dir>
@@ -93,7 +100,22 @@
    </stability>
    <date>2007-11-01</date>
    <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
-   <notes> - Added the ability to apply HTML attributes to all the option elements by using &apos;_qf_all&apos; in the associative array for the attributes parameter.</notes>
+   <notes>- Added the ability to apply HTML attributes to all the option elements by using &apos;_qf_all&apos; in the associative array for the attributes parameter.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2008-08-18</date>
+   <license uri="http://www.gnu.org/copyleft/lesser.html">LGPL</license>
+   <notes>- Fixed Bug #12940: XHTML compliance
+- Implemented Request #14475: SelectOther as textarea instead of input text
+- Implemented Request #12941: Allow generation of list markup</notes>
   </release>
  </changelog>
 </package>
