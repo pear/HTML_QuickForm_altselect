@@ -1,0 +1,28 @@
+{
+    "authors": [
+        {
+            "email": "shang.xiao.sanders@gmail.com",
+            "name": "David Sanders",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "description": "More info available on: http://pear.php.net/package/HTML_QuickForm_altselect",
+    "license": "LGPL",
+    "name": "pear/html_quickform_altselect",
+    "support": {
+        "issues": "http://pear.php.net/bugs/search.php?cmd=display&package_name[]=HTML_QuickForm_altselect",
+        "source": "https://github.com/pear/HTML_QuickForm_altselect"
+    },
+    "type": "library",
+    "require": {
+        "pear/pear_exception": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
